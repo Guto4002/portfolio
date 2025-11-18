@@ -764,8 +764,7 @@ body.light .projects-dots .dot.active {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: #FFB84D;
+    color: #adadad;
     border: none;
     font-size: 2rem;
     padding: 8px 14px;
@@ -775,16 +774,16 @@ body.light .projects-dots .dot.active {
     z-index: 10;
 }
 
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.7);
+.arrow:hover{
+    scale: 1.5;
 }
 
 .arrow.left {
-    left: -40px;
+    left: -60px;
 }
 
 .arrow.right {
-    right: -40px;
+    right: -60px;
 }
 
 /* Modo claro */
@@ -814,9 +813,9 @@ body.light .arrow:hover {
 }
 
 /* Ocultar navbar no mobile durante scroll para baixo */
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
     .navbar {
-        transition: transform 0.3s ease;
+        transition: transform 0.5s ease;
     }
 
     .navbar.hide {
