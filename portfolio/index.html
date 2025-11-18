@@ -305,53 +305,6 @@
             });
         });
 
-
-        // ===========================
-        // SWIPE DETECTOR
-        // ===========================
-
-        const carouselArea = document.getElementById("projectsCarousel");
-        let startX = 0;
-        let endX = 0;
-
-        // Touchscreen
-        carouselArea.addEventListener("touchstart", e => {
-            startX = e.touches[0].clientX;
-        });
-
-        carouselArea.addEventListener("touchend", e => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        // Mouse drag
-        carouselArea.addEventListener("mousedown", e => {
-            startX = e.clientX;
-        });
-
-        carouselArea.addEventListener("mouseup", e => {
-            endX = e.clientX;
-            handleSwipe();
-        });
-
-        // Lógica do swipe
-        function handleSwipe() {
-            let difference = endX - startX;
-
-            if (Math.abs(difference) < 40) return; // evitar toque leve
-
-            if (difference < 0) {
-                // deslizou pra esquerda -> próximo slide
-                if (currentFade < fadeSlides.length - 1) {
-                    showFadeSlide(currentFade + 1);
-                }
-            } else {
-                // deslizou pra direita -> slide anterior
-                if (currentFade > 0) {
-                    showFadeSlide(currentFade - 1);
-                }
-            }
-        }
         // ===========================
         // SETAS DO CARROSSEL
         // ===========================
