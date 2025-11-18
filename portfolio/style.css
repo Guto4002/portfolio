@@ -1,0 +1,825 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: #252525;
+    color: #FFB84D;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #0f0f0f;
+    transition: background-color 0.4s ease;
+}
+
+.navbar img {
+    width: 180px;
+}
+
+.menu a {
+    color: #FFB84D;
+    text-decoration: none;
+    margin-left: 60px;
+    font-size: 1.3rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.logo img:hover {
+    opacity: 0.5;
+}
+
+.menu a:hover {
+    color: #86560f;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2.5px;
+    left: 0;
+    bottom: -4px;
+    background-color: #86560f;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 60px;
+    margin-top: 50px;
+}
+
+.profile-pic {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* garante que a imagem fica redonda */
+    background-color: #FFB84D;
+    /* cor de fundo caso a imagem não carregue */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem dentro do avatar */
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* mantém tudo proporcional sem distorcer */
+}
+
+/* Animação ao passar o mouse */
+.profile-pic:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px rgba(255, 184, 77, 0.4);
+}
+
+/* Modo claro — sombra mais suave */
+body.light .profile-pic:hover {
+    box-shadow: 0 0 20px rgba(30, 30, 30, 0.4);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFB84D;
+    transition: color 0.4s ease;
+}
+
+.hero h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #d6d6d6;
+    line-height: 1.6rem;
+}
+
+/* Responsividade inicial */
+@media (max-width: 1033px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .menu a {
+        margin-left: 20px;
+    }
+}
+
+/* =========================
+   TEMA CLARO
+   ========================= */
+body.light {
+    background-color: #f8f8f8;
+    color: #1d1d1d;
+}
+
+body.light .menu a:hover {
+    color: #FFB84D;
+}
+
+body.light .profile-pic {
+    background-color: #1d1d1d;
+}
+
+body.light .profile-pic::after {
+    background-color: #f4f4f4;
+}
+
+body.light .hero h1 {
+    color: #86560f;
+}
+
+body.light .hero h2 {
+    color: #333333;
+}
+
+/* =========================
+   BOTÃO DE MODO
+   ========================= */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: transform 0.5s ease, opacity 0.4s ease;
+    transform: rotate(-10deg);
+}
+
+.theme-toggle:hover {
+    transform: rotate(25deg) scale(1.15);
+}
+
+.theme-toggle.fade {
+    opacity: 0;
+    transform: rotate(360deg) scale(0.8);
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+.sec-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.sections {
+    max-width: 900px;
+    text-align: justify;
+    padding-bottom: 90px;
+}
+
+.sections h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border-bottom: 2px dashed #FFB84D;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CURSOR PISCANTE
+   ========================= */
+.typing-text {
+    position: relative;
+    display: inline-block;
+}
+
+.typing-text::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #FFB84D;
+    animation: blink 1.2s steps(1, start) infinite;
+}
+
+body.light .typing-text::after {
+    background-color: #86560f;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer {
+    background-color: #0f0f0f;
+    color: #FFB84D;
+    padding: 60px 20px 30px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.feedback-form textarea {
+    resize: none;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Forms */
+.feedback {
+    text-align: center;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    background-color: #1d1d1d;
+    border: 1px solid #FFB84D;
+    color: #FFB84D;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.feedback-form ::placeholder {
+    color: #b58937;
+}
+
+.feedback-form button {
+    background-color: #FFB84D;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: #d69836;
+}
+
+/* Contact Info */
+.contact a {
+    color: #FFB84D;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #86560f;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+/* Light mode footer */
+body.light .footer {
+    background-color: #7c7c7c;
+    color: #1d1d1d;
+}
+
+body.light .footer h2 {
+    color: #1d1d1d;
+}
+
+body.light .feedback-form input,
+body.light .feedback-form textarea {
+    background-color: #fff;
+    color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+}
+
+body.light .feedback-form button {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+body.light .feedback-form button:hover {
+    background-color: #444;
+}
+
+body.light .contact a {
+    color: #1d1d1d;
+}
+
+body.light .contact a:hover {
+    color: #86560f;
+}
+
+body.light .footer-bottom {
+    color: #1d1d1d;
+}
+
+/* =========================
+   NAVBAR RESPONSIVA
+   ========================= */
+
+/* Ocultar o botão em desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #FFB84D;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 1033px) {
+
+    /* mostrar botão */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* esconder menu padrão */
+    .menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: #0f0f0f;
+        border: 1px solid #ffc56e;
+        padding: 20px;
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+        width: 200px;
+        text-align: right;
+    }
+
+    .menu.open {
+        display: flex;
+        animation: fadeDown 0.3s ease;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ajustar links */
+    .menu a {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+    /* mover o botão de tema para dentro do menu */
+    .theme-toggle {
+        align-self: flex-end;
+    }
+}
+
+/* ===== Scrollbar personalizada ===== */
+
+/* Largura das barras */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    /* barra horizontal */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+/* Corpo da barra (thumb) */
+::-webkit-scrollbar-thumb {
+    background: #FFB84D;
+    border-radius: 8px;
+}
+
+/* Hover na barra */
+::-webkit-scrollbar-thumb:hover {
+    background: #d69836;
+}
+
+/* =========================
+   SOBRE MIM
+   ========================= */
+.about-section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #FFB84D;
+    border-bottom: 2px dashed #FFB84D;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    color: #e2e2e2;
+    text-align: justify;
+}
+
+/* Light mode */
+body.light .about-section h1 {
+    color: #1d1d1d;
+    border-color: #86560f;
+}
+
+body.light .about-content {
+    color: #333;
+}
+
+/* =========================
+   TECNOLOGIAS
+   ========================= */
+.tech-section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tech-section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #FFB84D;
+    margin-bottom: 40px;
+    border-bottom: 2px dashed #FFB84D;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* GRID */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* CARD */
+.tech-card {
+    background-color: #0f0f0f;
+    border: 1px solid #FFB84D;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 184, 77, 0.2);
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tech-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.tech-card p {
+    font-size: 0.95rem;
+    color: #d4d4d4;
+    line-height: 1.5rem;
+}
+
+/* Light Mode */
+body.light .tech-card {
+    background-color: #ffffff;
+    border-color: #86560f;
+}
+
+body.light .tech-section h1 {
+    color: #1d1d1d;
+    border-color: #86560f;
+}
+
+body.light .tech-card p {
+    color: #333;
+}
+
+body.light .tech-card:hover {
+    box-shadow: 0 0 20px rgba(80, 80, 80, 0.3);
+}
+
+/* =========================
+   PROJETOS — CARROSSEL FADE
+========================= */
+
+.projects-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects-section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-bottom: 2px dashed #FFB84D;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.projects-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* SLIDE */
+.project-slide {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+}
+
+.project-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+}
+
+/* MOCKUPS */
+.mockups {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.mockup {
+    background-color: #111;
+    padding: 8px;
+    border-radius: 14px;
+    border: 1.5px solid #FFB84D;
+    box-shadow:
+        0 0 25px rgba(255, 184, 77, 0.25),
+        /* glow dourado */
+        0 8px 25px rgba(0, 0, 0, 0.65);
+    /* profundidade */
+}
+
+
+.mock-notebook {
+    width: 75%;
+    aspect-ratio: 16 / 9;
+}
+
+.mock-phone {
+    width: 32%;
+    aspect-ratio: 9 / 16;
+}
+
+.mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* mantém o aspecto da imagem sem distorcer */
+    display: block;
+    border-radius: 4px;
+}
+
+/* TEXTO */
+.project-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.tech {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* DOTS */
+.projects-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.projects-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projects-dots .dot.active {
+    background: #FFB84D;
+    transform: scale(1.2);
+}
+
+/* MODO CLARO */
+body.light .mockup {
+    background: #fff;
+    border-color: #86560f;
+}
+
+body.light .projects-dots .dot {
+    background: #777;
+}
+
+body.light .projects-dots .dot.active {
+    background: #86560f;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+    .mockups {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mock-notebook {
+        width: 100%;
+    }
+
+    .mock-phone {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+/* =========================
+   SETAS DO CARROSSEL
+   ========================= */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #FFB84D;
+    border: none;
+    font-size: 2rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    z-index: 10;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.arrow.left {
+    left: -40px;
+}
+
+.arrow.right {
+    right: -40px;
+}
+
+/* Modo claro */
+body.light .arrow {
+    background: rgba(255, 255, 255, 0.4);
+    color: #86560f;
+}
+
+body.light .arrow:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* mobile — setas mais discretas */
+@media (max-width: 800px) {
+    .arrow {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+    }
+
+    .arrow.left {
+        left: -15px;
+    }
+
+    .arrow.right {
+        right: -15px;
+    }
+}
+
+/* Ocultar navbar no mobile durante scroll para baixo */
+@media (max-width: 1200px) {
+    .navbar {
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.hide {
+        transform: translateY(-100%);
+    }
+}

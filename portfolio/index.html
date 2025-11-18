@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guto.dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/fav-ico.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="dark">
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <img src="images/header-logo-home.png" alt="logo">
+        </a>
+
+        <!-- Botão menu mobile -->
+        <button class="menu-toggle" id="menu-toggle">
+            ☰
+        </button>
+
+        <nav class="menu" id="menu">
+            <a href="#about">Sobre mim</a>
+            <a href="#tech">Tecnologias</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contate">Contato</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="profile-pic">
+            <img src="images/perfil.jpg" alt="Foto de Augusto">
+        </div>
+
+        <div class="hero-text">
+            <h1>Opa, bora desenvolver <span class="typing-text">?</span></h1>
+            <h2>Sou um dev Fullstack, essa página além de ser um projeto que posso aplicar na sua empresa é meu
+                portfólio
+                pessoal!
+            </h2>
+        </div>
+    </main>
+
+    <div class="sec-container">
+        <div class="sections">
+            <section id="about" class="about-section">
+                <h1>Sobre mim</h1>
+
+                <div class="about-content">
+                    <p>
+                        Meu nome é <span class="highlight">Augusto José Albuquerque Lopes</span>, Tenho 24 anos e sou
+                        desenvolvedor Fullstack JavaScript
+                        especializado em
+                        <span class="highlight">automação de processos</span> e criação de sistemas sob medida usando
+                        <span class="highlight">Apps Script (JS)</span>, <span class="highlight">AppSheet</span>,
+                        <span class="highlight">Google Sheets</span> e <span class="highlight">Firebase</span>.
+                    </p>
+
+                    <p>
+                        Meu foco é transformar rotinas manuais em soluções inteligentes, rápidas e automatizadas,
+                        conectando aplicativos, bancos de dados, APIs e bots de atendimento.
+                    </p>
+
+                    <p>
+                        Já desenvolvi sistemas completos de reservas, integrações via WhatsApp, bots inteligentes
+                        e automações para empresas que buscavam agilidade, praticidade e redução de tempo operacional.
+                    </p>
+
+                    <p>
+                        Atualmente trabalho criando soluções personalizadas para negócios que desejam digitalizar seus
+                        processos
+                        sem precisar de sistemas complexos e caros — trazendo tecnologia de forma simples, intuitiva e
+                        eficiente.
+                    </p>
+                </div>
+            </section>
+            <section id="tech" class="tech-section">
+                <h1>Tecnologias</h1>
+
+                <div class="tech-grid">
+
+                    <div class="tech-card">
+                        <span class="tech-icon">📱</span>
+                        <h3>AppSheet</h3>
+                        <p>Criação rápida de apps completos conectados ao Google Cloud.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span class="tech-icon">⚙️</span>
+                        <h3>Apps Script (JavaScript)</h3>
+                        <p>Automação avançada, integrações e lógica de backend.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span class="tech-icon">📊</span>
+                        <h3>Google Sheets</h3>
+                        <p>Banco de dados leve e eficiente para apps e automações.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span class="tech-icon">🔥</span>
+                        <h3>Firebase</h3>
+                        <p>Autenticação, banco de dados e hospedagem em tempo real.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span class="tech-icon">🤖</span>
+                        <h3>Bots e Webhooks</h3>
+                        <p>Integração com APIs e automações inteligentes via WhatsApp.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span class="tech-icon">🔗</span>
+                        <h3>APIs & Integrações</h3>
+                        <p>Conexão de sistemas, automações e comunicação entre plataformas.</p>
+                    </div>
+
+                </div>
+            </section>
+            <section id="projects" class="projects-section">
+                <h1>Projetos</h1>
+
+                <div class="projects-carousel" id="projectsCarousel">
+                    <div class="projects-track" id="projectsTrack">
+
+
+                        <!-- Slide 1 -->
+                        <div class="project-slide active">
+                            <div class="mockups">
+                                <div class="mockup mock-phone">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="videos/project-1-phone.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div class="project-info">
+                                <h2>Bot automatizado + CRM - Gráfica RL</h2>
+                                <p>
+                                    Integrei o WhatsApp diretamente ao CRM da gráfica, permitindo que o cliente consulte
+                                    pedidos, receba respostas automáticas e utilize funções de atendimento inteligente
+                                    em tempo real.
+                                    Além disso, todo o fluxo foi automatizado com Apps Script e APIs internas,
+                                    eliminando tarefas manuais e reduzindo o tempo de atendimento.
+                                </p>
+                                <p class="tech">Tecnologias:
+                                    Apps Script, Google Sheets, API Oficial do WhatsApp + API própria, Webhooks,
+                                    WhatsApp Automation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="project-slide">
+                            <div class="mockups">
+                                <div class="mockup mock-notebook">
+                                    <img src="images/project-2-pc.png" alt="Tela da dashboard">
+                                </div>
+                                <div class="mockup mock-phone">
+                                    <video autoplay loop muted playsinline>
+                                        <source src="videos/project-2-phone.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div class="project-info">
+                                <h2>Sistema de reservas, App de gestão e banco de dados - <br> Alugue em Carneiros
+                                    Tamandaré
+                                </h2>
+                                <p>
+                                    Desenvolvi um sistema completo de reservas integrado ao WhatsApp, AppSheet e Google
+                                    Sheets — incluindo confirmação automática, lembretes, notificações e atualização do
+                                    banco de dados em tempo real.
+                                    O projeto também conta com um aplicativo próprio para gestão de imóveis, calendário,
+                                    ocupação e controle operacional.
+                                </p>
+                                <p class="tech">Tecnologias:
+                                    AppSheet, Google Sheets, Apps Script (JS), WhatsApp API, Webhooks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow left" id="prevProject">❮</button>
+                    <button class="arrow right" id="nextProject">❯</button>
+
+                    <!-- Indicadores -->
+                    <div class="projects-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Feedback Form -->
+            <div class="feedback">
+                <h2>Deixe seu feedback</h2>
+                <form id="contactForm" class="feedback-form">
+                    <input id="name" name="name" type="text" placeholder="Seu nome" required>
+                    <input id="email" name="email" type="email" placeholder="Seu e-mail" required>
+                    <textarea id="message" name="message" rows="4" placeholder="Sua mensagem..." required></textarea>
+                    <button id="submit" type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact">
+                <h2 id="contate">Contato</h2>
+                <p>📞 <a href="https://wa.me/5581981279574" target="_blank">fale comigo pelo whatsApp</a></p>
+                <p>✉️ <a href="mailto:augustolopes230@gmail.com">augustolopes230@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Guto.dev© — Desenvolvido por Augusto Lopes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script do tema -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("LxQfD__WrtjDKZ8_T"); 
+    </script>
+
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        // Carregar tema salvo
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.remove("dark");
+            body.classList.add("light");
+            toggleBtn.textContent = "☀️";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            // Animação suave
+            toggleBtn.classList.add("fade");
+
+            setTimeout(() => {
+                body.classList.toggle("dark");
+                body.classList.toggle("light");
+
+                const isLight = body.classList.contains("light");
+                toggleBtn.textContent = isLight ? "☀️" : "🌙";
+                localStorage.setItem("theme", isLight ? "light" : "dark");
+
+                toggleBtn.classList.remove("fade");
+            }, 250);
+        });
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("open");
+        });
+        // Carrossel com fade
+        const slidesFade = document.querySelectorAll(".project-slide");
+        const dotsFade = document.querySelectorAll(".projects-dots .dot");
+
+        dotsFade.forEach(dot => {
+            dot.addEventListener("click", () => {
+                let index = parseInt(dot.dataset.index);
+
+                slidesFade.forEach(s => s.classList.remove("active"));
+                dotsFade.forEach(d => d.classList.remove("active"));
+
+                slidesFade[index].classList.add("active");
+                dot.classList.add("active");
+            });
+        });
+        // ===========================
+        // CARROSSEL COM SWIPE + FADE
+        // ===========================
+
+        const fadeSlides = document.querySelectorAll(".project-slide");
+        const fadeDots = document.querySelectorAll(".projects-dots .dot");
+        let currentFade = 0;
+
+        function showFadeSlide(index) {
+            fadeSlides.forEach(s => s.classList.remove("active"));
+            fadeDots.forEach(d => d.classList.remove("active"));
+
+            fadeSlides[index].classList.add("active");
+            fadeDots[index].classList.add("active");
+
+            currentFade = index;
+        }
+
+        // Clique nos dots ainda funciona
+        fadeDots.forEach(dot => {
+            dot.addEventListener("click", () => {
+                showFadeSlide(parseInt(dot.dataset.index));
+            });
+        });
+
+
+        // ===========================
+        // SWIPE DETECTOR
+        // ===========================
+
+        const carouselArea = document.getElementById("projectsCarousel");
+        let startX = 0;
+        let endX = 0;
+
+        // Touchscreen
+        carouselArea.addEventListener("touchstart", e => {
+            startX = e.touches[0].clientX;
+        });
+
+        carouselArea.addEventListener("touchend", e => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        // Mouse drag
+        carouselArea.addEventListener("mousedown", e => {
+            startX = e.clientX;
+        });
+
+        carouselArea.addEventListener("mouseup", e => {
+            endX = e.clientX;
+            handleSwipe();
+        });
+
+        // Lógica do swipe
+        function handleSwipe() {
+            let difference = endX - startX;
+
+            if (Math.abs(difference) < 40) return; // evitar toque leve
+
+            if (difference < 0) {
+                // deslizou pra esquerda -> próximo slide
+                if (currentFade < fadeSlides.length - 1) {
+                    showFadeSlide(currentFade + 1);
+                }
+            } else {
+                // deslizou pra direita -> slide anterior
+                if (currentFade > 0) {
+                    showFadeSlide(currentFade - 1);
+                }
+            }
+        }
+        // ===========================
+        // SETAS DO CARROSSEL
+        // ===========================
+        const btnPrev = document.getElementById("prevProject");
+        const btnNext = document.getElementById("nextProject");
+
+        btnPrev.addEventListener("click", () => {
+            if (currentFade > 0) showFadeSlide(currentFade - 1);
+        });
+
+        btnNext.addEventListener("click", () => {
+            if (currentFade < fadeSlides.length - 1) showFadeSlide(currentFade + 1);
+        });
+        // ===========================
+        // NAVBAR MOBILE — esconder ao rolar para baixo
+        // ===========================
+
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            // Só aplicar no mobile
+            if (window.innerWidth <= 850) {
+                if (currentScroll > lastScroll) {
+                    // rolando pra baixo → esconder
+                    document.querySelector(".navbar").classList.add("hide");
+                } else {
+                    // rolando pra cima → mostrar
+                    document.querySelector(".navbar").classList.remove("hide");
+                }
+            }
+
+            lastScroll = currentScroll;
+        });
+        // ===========================
+        // FECHAR MENU MOBILE AO CLICAR EM UM ITEM
+        // ===========================
+        const menuLinks = document.querySelectorAll("#menu a");
+
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 850) {
+                    menu.classList.remove("open");
+                }
+            });
+        });
+        // =====================
+        // Formulário - EmailJS
+        // =====================
+
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+            };
+
+            emailjs.send("service_f9g7c4q", "template_fs86vkg", params)
+                .then(() => {
+                    alert("Mensagem enviada com sucesso! Obrigado pelo contato 😄");
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error("Erro ao enviar:", error);
+                    alert("Ocorreu um erro, tente novamente.");
+                });
+        });
+
+
+    </script>
+</body>
+
+</html>
