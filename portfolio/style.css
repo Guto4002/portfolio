@@ -575,6 +575,13 @@ body.light .about-content {
     display: block;
 }
 
+.tech-icon img {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+}
+
+
 .tech-card h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -821,4 +828,44 @@ body.light .arrow:hover {
     .navbar.hide {
         transform: translateY(-100%);
     }
+}
+
+/* ==========================
+   DESCOMPLICANDO O DESENVOLVIMENTO
+   ========================== */
+.easy-section {
+    padding-top: 90px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.easy-section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    border-bottom: 2px dashed #FFB84D;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.easy-content p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    line-height: 1.6rem;
+}
+
+.easy-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.easy-list li {
+    font-size: 1rem;
+    margin: 10px 0;
+    background: rgba(255, 184, 77, 0.05);
+    border-left: 3px solid #FFB84D;
+    padding: 12px;
+    border-radius: 6px;
 }
